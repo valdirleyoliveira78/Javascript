@@ -1,0 +1,2 @@
+Dica Igor:
+<ctrl><;> //comenta a linha
