@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo JokenPô</title>
+</head>
+ <body>
+    <h1>Jogo Jokenpô</h1>
+    <h3>Jogador:</h3>
+    <img src="pedra.png" alt="Pedra">
+    <img src="papel.png" alt="Papel">
+    <img src="tesoura.png" alt="Tesoura">
+
+    <form name="frmJokenpo">
+        <input type="radio" name='grupo' id="Pedra">Pedra
+        <input type="radio" name='grupo' id="Papel">Papel
+        <input type="radio" name='grupo' id="Tesoura">Tesoura
+        </p>
+
+        <input type="button" value="JOGAR" onclick="jogar()">
+        <input type="reset" value="RESET" onclick="Resetar()">
+        </p>
+    </form>
+    <hr>
+    <h3>Computador:</h3>
+    <img src="pc.png" alt="pc" id="pc">
+    <hr>
+    <h3 id="placar"></h3>
+    <script src="JokenPo.js"></script>
+ </body>
+</html>
+
+==============================================================================================================================
+
+/**
+* Aula JokenPo
+* @author Valdirley Oliveira
+*/
+
+function jogar() {
+   if ((document.getElementById("Pedra").checked == false &&
+       document.getElementById("Papel").checked == false &&
+       document.getElementById("Tesoura").checked == false)) {
+       alert("Selecione uma Opção")
+   } else {
+       let cpu = Math.floor(Math.random() * 3)
+       switch (cpu) {
+           case 0:
+               document.getElementById("pc").src = "pcpedra.png"
+               break
+
+           case 1:
+               document.getElementById("pc").src = "pcpapel.png"
+               break
+
+           case 2:
+               document.getElementById("pc").src = "pctesoura.png"
+               break
+       }
+
+       // Retorna o vencedor ou empate 
+
+       if ((document.getElementById("Pedra").checked == true && cpu == 0) || (document.getElementById("Papel").checked == true && cpu == 1) ||
+           (document.getElementById("Tesoura").checked == true && cpu == 2)) {
+
+           document.getElementById("placar").innerText = "Empate"
+       }
+       else if ((document.getElementById("Pedra").checked == true && cpu == 2) ||
+           (document.getElementById("Papel").checked == true && cpu == 0) ||
+           (document.getElementById("Tesoura").checked == true && cpu == 1)) {
+           document.getElementById("placar").innerText = "Jogador venceu"
+       } else {
+           document.getElementById("placar").innerText = "CPU Venceu"
+       }
+   }
+}
+
+function Resetar() {
+   document.getElementById("pc").src = "pc.png"
+   document.getElementById("placar").innerText = ""
+}
+
+
+
+
+alert("Voto Proibido") 
+alert("Voto Obrigatório")
+alert("Voto Facultativo")
+
+
+Atividade: Desenvolver um app de Regra de 3 que faça o cálculo da porcentagem 
+conforme abaixo
+
+Ex 20% de 300 = 60
+
+
+
+Exercícios de incremento e decremento 
+Laços 
+
+for (let i = 10; 10 < 1; i-1){
+    console.log(i)}
+undefined
+for (let i = 10; i >= 1 ; i --){
+    console.log(i)}
+
+
+Exemplo de tabuada 
+
+let valor = 8 
+
+
+
+ for (let i = 1; i <=10 ; i++ ){
+     document.write(valor + 'X' + i + '='+ (valor * i ) + '<br>')
+ }
+
+
+Todas as tabuadas usando laço for
+
+ for (let i = 1; i <=10 ; i++ ){
+     document.write('<p>Tabuada do ' + i + '</p>')
+     for ( let j = 1; j <= 10; j++){
+         document.write( i + 'x ' + j + '=' + ( i*j) + '<br>')
+     } 
+
+    }
+
+=======================================================================
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabuada</title>
+</head>
+
+<body>
+    
+    <script src="tabuada.js"></script>
+
+</body>
+
+</html>
