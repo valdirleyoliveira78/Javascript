@@ -1,0 +1,147 @@
+Aula 7 
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PDV</title>
+</head>
+
+<body>
+    <h1>PDV</h1>
+    <form name="frmpdv">
+        <input type="text" name="txtTotal" placeholder="Total">
+        <input type="text" name="txtDesconto" placeholder="% Desconto"><p>
+
+            <input type="button" value="Calcular" onclick="CalcularDesconto()"><p>
+                <input type="text" name="txtTotalDesconto" placeholder="Desconto" disabled>
+                <hr>
+                <input type="text" name="txtValorPago" placeholder="ValorPago" disabled><p>
+                    <input type="button" value="CalcularTroco" onclick="CalcularTroco()"><p>
+                        <input type="text" name="txtTroco" disabled>
+    </form>
+
+    <script src="pdv.js"></script>
+
+</body>
+
+</html>
+
+
+==================================================================================================
+
+
+/**
+ * PDV - Exercicio referente a cálculo de porcentagem 
+ * @author Vaçdirley Oliveira 
+ */
+
+let total, desconto, valorDesconto, totalDesconto, valorPago, Troco
+
+function CalcularDesconto() {
+    total = Number(frmpdv.txtTotal.value.replace(',', '.'))
+    desconto = Number(frmpdv.txtDesconto.value.replace(',', '.'))
+    // procecssamento 
+    valorDesconto = (total * desconto) / 100
+    totalDesconto = total - (total * desconto) / 100
+
+    //saída
+    frmpdv.txtDesconto.value = valorDesconto.toFixed(2)
+    frmpdv.txtTotalDesconto.value = totalDesconto.toFixed(2)
+}
+
+function CalcularTroco(){ 
+
+    valorPago = Number(frmpdv.txtValorPago.value.replce(',','.'))
+    troco = valorPago - totalDesconto
+    frmpdv.txtTroco.value = troco.toFixed(2)
+}   
+
+
+
+
+while 
+
+sempre executa se a condição for verdadeira 
+
+Do whuile 
+
+
+/**
+ * Tabuada While 
+ * @author Valdirley Oliveira 
+ */
+
+let i = 1
+let j = 1
+
+while (i <= 10) {
+    document.write('<p> tabuada do ' + i + '</p>')
+    while (j <= 10) {
+        document.write('<p>' + i + 'x' + j + '=' + (i * j) + '</p>')
+        j++
+    }
+    i++
+    j = 1
+}
+
+
+
+    
+    <script src="tabuada.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+let i = 1
+let j = 1
+
+
+while (i <= 10) {
+
+
+    while (i <= 10) {
+        document.write(i + 'x' + j + '=' + i * j + '<br>')
+        i++
+    }
+    i = 0
+    j++
+}
+
+
+
+Array ( html ) 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo de Cartas</title>
+</head>
+<body>
+    <h1>Jogo de Cartas</h1>
+
+    <script src="cartas.js"></script>
+</body>
+</html>
+
+Array 
+javascript 
+
+ let faces = [ 'A','2','3','4','5','6','7','8','9','10','J','Q','K']
+ let nipes = ['?','?','?','?']
+ let f = faces[Math.floor(Math.random()* 13)]
+ let n = nipes[Math.floor(Math.random()* 4)]
+ document.write('<h1>' + f + n + '</h1>')
+
+
